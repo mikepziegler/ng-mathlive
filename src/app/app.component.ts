@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { MathfieldElement } from 'mathlive';
 
 MathfieldElement.fontsDirectory = '../assets/mathlive/fonts';
+MathfieldElement.soundsDirectory = '../assets/mathlive/sounds';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('mathField', { static: true }) mathFieldElement: ElementRef<MathfieldElement>;
 
   ngOnInit() {
-    const mfe = new MathfieldElement();
-
-
-    this.mathFieldElement.nativeElement = mfe;
-
-
+    this.mathFieldElement.nativeElement = new MathfieldElement();
   }
 
   ngAfterViewInit() {
